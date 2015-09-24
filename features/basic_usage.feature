@@ -17,5 +17,5 @@ Feature: Basic usage
         </body>
       </html>
       """
-    When I run `ghtml2pdf input.html output.pdf`
+    When I successfully run `ghtml2pdf input.html output.pdf`
     Then the file "output.pdf" should exist
