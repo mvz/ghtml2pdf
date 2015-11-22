@@ -4,6 +4,10 @@ module GHtml2Pdf
   class Application
     def run
       input, output, = ARGV
+      unless output
+        warn "An output filename is required"
+        exit 1
+      end
       input_uri = "file://#{File.expand_path(input)}"
       output_uri = "file://#{File.expand_path(output)}"
 
