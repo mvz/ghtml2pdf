@@ -21,6 +21,11 @@ Feature: Basic usage
     Then the file "output.pdf" should exist
 
   Scenario: Command line feedback
+    When I run `ghtml2pdf`
+    Then it should fail with:
+      """
+      An input filename is required
+      """
     When I run `ghtml2pdf input.html`
     Then it should fail with:
       """
