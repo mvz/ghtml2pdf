@@ -2,4 +2,5 @@
 
 require 'ghtml2pdf'
 
+Gtk.init
 GHtml2Pdf.run

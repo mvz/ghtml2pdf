@@ -1,5 +1,7 @@
 require 'gir_ffi-gtk3'
 
+GirFFI.setup :WebKit2, '4.0'
+
 module GHtml2Pdf
   class Application
     def run
@@ -14,10 +16,6 @@ module GHtml2Pdf
       end
       input_uri = "file://#{File.expand_path(input)}"
       output_uri = "file://#{File.expand_path(output)}"
-
-      GirFFI.setup :WebKit2, '4.0'
-
-      Gtk.init
 
       win = Gtk::OffscreenWindow.new
       web_view = WebKit2::WebView.new
