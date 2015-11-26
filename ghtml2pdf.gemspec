@@ -17,7 +17,10 @@ Gem::Specification.new do |spec|
   spec.homepage      = 'https://github.com/mvz/ghtml2pdf'
   spec.license       = 'MIT'
 
-  spec.files         = `git ls-files -z`.split("\x0")
+  spec.files         = Dir['lib/**/*.rb',
+                           'Changelog.md',
+                           'LICENSE.txt',
+                           'README.md']
   spec.bindir        = 'bin'
   spec.executables   = ['ghtml2pdf']
   spec.require_paths = ['lib']
