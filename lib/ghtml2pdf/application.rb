@@ -28,6 +28,8 @@ module GHtml2Pdf
       web_view.load_uri(input_uri)
 
       Gtk.main
+
+      web_view.destroy
     end
 
     private
@@ -43,8 +45,14 @@ module GHtml2Pdf
       Gtk::PageSetup.new
     end
 
+    def web_context
+      @web_context || WebKit2::WebContext.new.tap do |context|
+        context.set_process_model :multiple_secondary_processes
+      end
+    end
+
     def web_view
-      @web_view ||= WebKit2::WebView.new
+      @web_view ||= WebKit2::WebView.new_with_context web_context
     end
 
     def print_settings
