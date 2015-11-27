@@ -4,16 +4,21 @@ GirFFI.setup :WebKit2, '4.0'
 
 module GHtml2Pdf
   class Application
-    def run
-      input, output, = ARGV
-      unless input
+    attr_reader :input, :output
+
+    def initialize(argv)
+      @input, @output, = ARGV
+      unless @input
         warn "An input filename is required"
         exit 1
       end
-      unless output
+      unless @output
         warn "An output filename is required"
         exit 1
       end
+    end
+
+    def run
       input_uri = "file://#{File.expand_path(input)}"
       output_uri = "file://#{File.expand_path(output)}"
 

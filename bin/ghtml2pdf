@@ -3,4 +3,4 @@
 require 'ghtml2pdf'
 
 Gtk.init
-GHtml2Pdf.run
+GHtml2Pdf.run(ARGV)
