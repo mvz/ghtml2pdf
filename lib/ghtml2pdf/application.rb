@@ -21,9 +21,6 @@ module GHtml2Pdf
     end
 
     def run
-      win = Gtk::OffscreenWindow.new
-      win.add(web_view)
-
       web_view.signal_connect "load-changed" do |_, event, _|
         case event
         when :finished
@@ -34,7 +31,6 @@ module GHtml2Pdf
       end
 
       web_view.load_uri(input_uri)
-      win.show_all
 
       Gtk.main
     end
