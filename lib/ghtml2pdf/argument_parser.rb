@@ -3,15 +3,16 @@ module GHtml2Pdf
   class ArgumentParser
     attr_reader :input, :output
 
+    # Error class raised for missing arguments
+    class MissingArgument < StandardError; end
+
     def initialize(argv)
       @input, @output, = argv
       unless @input
-        warn 'An input filename is required'
-        exit 1
+        raise MissingArgument, 'An input filename is required'
       end
       unless @output
-        warn 'An output filename is required'
-        exit 1
+        raise MissingArgument, 'An output filename is required'
       end
     end
   end
