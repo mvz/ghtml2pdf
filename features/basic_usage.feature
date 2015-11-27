@@ -19,15 +19,3 @@ Feature: Basic usage
       """
     When I successfully run `ghtml2pdf input.html output.pdf`
     Then the file "output.pdf" should exist
-
-  Scenario: Command line feedback
-    When I run `ghtml2pdf`
-    Then it should fail with exactly:
-      """
-      An input filename is required
-      """
-    When I run `ghtml2pdf input.html`
-    Then it should fail with exactly:
-      """
-      An output filename is required
-      """
