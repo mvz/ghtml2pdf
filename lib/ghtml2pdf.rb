@@ -1,8 +1,12 @@
 require 'ghtml2pdf/version'
 require 'ghtml2pdf/application'
 
+# Main entry point for GHtml2Pdf.
 module GHtml2Pdf
-  def self.run
-    GHtml2Pdf::Application.new.run
+  # Run the application.
+  #
+  # @param [Array] argv The command line arguments
+  def self.run(argv)
+    GHtml2Pdf::Application.new(argv).run
   end
 end

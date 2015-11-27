@@ -1,0 +1,3 @@
+# Always use raise to raise exceptions
+Style/SignalException:
+  EnforcedStyle: only_raise
