@@ -27,18 +27,6 @@ module GHtml2Pdf
 
       page_setup = Gtk::PageSetup.new
 
-      print_settings = Gtk::PrintSettings.new
-      print_settings.set_number_up 1
-      print_settings.set_reverse false
-      print_settings.set_print_pages :all
-      print_settings.set 'output-uri', output_uri
-      print_settings.set 'output-file-format', 'pdf'
-      print_settings.set_collate false
-      print_settings.set_n_copies 1
-      print_settings.set_printer 'Print to File'
-      print_settings.set_page_set :all
-      print_settings.set_scale 100.0
-
       print_operation = WebKit2::PrintOperation.new(web_view)
       print_operation.page_setup = page_setup
       print_operation.print_settings = print_settings
@@ -56,6 +44,21 @@ module GHtml2Pdf
       win.show_all
 
       Gtk.main
+    end
+
+    def print_settings
+      Gtk::PrintSettings.new.tap do |settings|
+        settings.set_number_up 1
+        settings.set_reverse false
+        settings.set_print_pages :all
+        settings.set 'output-uri', output_uri
+        settings.set 'output-file-format', 'pdf'
+        settings.set_collate false
+        settings.set_n_copies 1
+        settings.set_printer 'Print to File'
+        settings.set_page_set :all
+        settings.set_scale 100.0
+      end
     end
 
     private
