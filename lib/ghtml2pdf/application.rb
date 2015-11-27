@@ -16,7 +16,7 @@ module GHtml2Pdf
     end
 
     def run
-      web_view.signal_connect "load-changed" do |_, event, _|
+      web_view.signal_connect 'load-changed' do |_, event, _|
         case event
         when :finished
           print_operation.print

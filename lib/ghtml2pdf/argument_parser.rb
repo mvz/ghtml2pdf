@@ -6,11 +6,11 @@ module GHtml2Pdf
     def initialize(argv)
       @input, @output, = argv
       unless @input
-        warn "An input filename is required"
+        warn 'An input filename is required'
         exit 1
       end
       unless @output
-        warn "An output filename is required"
+        warn 'An output filename is required'
         exit 1
       end
     end
