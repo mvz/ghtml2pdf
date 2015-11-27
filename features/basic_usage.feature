@@ -19,3 +19,4 @@ Feature: Basic usage
       """
     When I successfully run `ghtml2pdf input.html output.pdf`
     Then the file "output.pdf" should exist
+    And the file "output.pdf" should have default page properties
