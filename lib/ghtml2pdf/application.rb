@@ -22,7 +22,6 @@ module GHtml2Pdf
 
     def run
       win = Gtk::OffscreenWindow.new
-      web_view = WebKit2::WebView.new
       win.add(web_view)
 
       page_setup = Gtk::PageSetup.new
@@ -44,6 +43,10 @@ module GHtml2Pdf
       win.show_all
 
       Gtk.main
+    end
+
+    def web_view
+      @web_view ||= WebKit2::WebView.new
     end
 
     def print_settings
