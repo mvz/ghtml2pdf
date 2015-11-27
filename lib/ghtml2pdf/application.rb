@@ -21,9 +21,6 @@ module GHtml2Pdf
     end
 
     def run
-      input_uri = "file://#{File.expand_path(input)}"
-      output_uri = "file://#{File.expand_path(output)}"
-
       win = Gtk::OffscreenWindow.new
       web_view = WebKit2::WebView.new
       win.add(web_view)
@@ -59,6 +56,16 @@ module GHtml2Pdf
       win.show_all
 
       Gtk.main
+    end
+
+    private
+
+    def output_uri
+      "file://#{File.expand_path(output)}"
+    end
+
+    def input_uri
+      "file://#{File.expand_path(input)}"
     end
   end
 end
