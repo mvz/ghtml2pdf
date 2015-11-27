@@ -1,11 +1,14 @@
 #!/usr/bin/env ruby
 
 require 'ghtml2pdf'
+require 'headless'
 
-Gtk.init
-begin
-  GHtml2Pdf.run(ARGV)
-rescue GHtml2Pdf::MissingArgument => e
-  warn e.message
-  exit 1
+Headless.ly do
+  Gtk.init
+  begin
+    GHtml2Pdf.run(ARGV)
+  rescue GHtml2Pdf::MissingArgument => e
+    warn e.message
+    exit 1
+  end
 end
