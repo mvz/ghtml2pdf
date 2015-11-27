@@ -24,12 +24,6 @@ module GHtml2Pdf
       win = Gtk::OffscreenWindow.new
       win.add(web_view)
 
-      page_setup = Gtk::PageSetup.new
-
-      print_operation = WebKit2::PrintOperation.new(web_view)
-      print_operation.page_setup = page_setup
-      print_operation.print_settings = print_settings
-
       web_view.signal_connect "load-changed" do |_, event, _|
         case event
         when :finished
@@ -43,6 +37,18 @@ module GHtml2Pdf
       win.show_all
 
       Gtk.main
+    end
+
+    private
+
+    def print_operation
+      page_setup = Gtk::PageSetup.new
+
+      print_operation = WebKit2::PrintOperation.new(web_view)
+      print_operation.page_setup = page_setup
+      print_operation.print_settings = print_settings
+
+      return print_operation
     end
 
     def web_view
@@ -63,8 +69,6 @@ module GHtml2Pdf
         settings.set_scale 100.0
       end
     end
-
-    private
 
     def output_uri
       "file://#{File.expand_path(output)}"
