@@ -33,13 +33,14 @@ module GHtml2Pdf
     private
 
     def print_operation
-      page_setup = Gtk::PageSetup.new
+      WebKit2::PrintOperation.new(web_view).tap do |operation|
+        operation.page_setup = page_setup
+        operation.print_settings = print_settings
+      end
+    end
 
-      print_operation = WebKit2::PrintOperation.new(web_view)
-      print_operation.page_setup = page_setup
-      print_operation.print_settings = print_settings
-
-      return print_operation
+    def page_setup
+      Gtk::PageSetup.new
     end
 
     def web_view
