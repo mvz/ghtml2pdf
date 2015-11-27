@@ -9,7 +9,7 @@ module GHtml2Pdf
     attr_reader :input, :output
 
     def initialize(argv)
-      @input, @output, = ARGV
+      @input, @output, = argv
       unless @input
         warn "An input filename is required"
         exit 1
