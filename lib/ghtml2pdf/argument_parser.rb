@@ -8,12 +8,8 @@ module GHtml2Pdf
 
     def initialize(argv)
       @input, @output, = argv
-      unless @input
-        raise MissingArgument, 'An input filename is required'
-      end
-      unless @output
-        raise MissingArgument, 'An output filename is required'
-      end
+      raise MissingArgument, 'An input filename is required' unless @input
+      raise MissingArgument, 'An output filename is required' unless @output
     end
   end
 end
