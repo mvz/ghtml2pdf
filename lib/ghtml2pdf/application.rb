@@ -3,6 +3,8 @@ require 'gir_ffi-gtk3'
 GirFFI.setup :WebKit2, '4.0'
 
 module GHtml2Pdf
+  # Main GHtml2Pdf application. Orchestrates the Gtk+ objects needed to load
+  # and print a web page to PDF.
   class Application
     attr_reader :input, :output
 
