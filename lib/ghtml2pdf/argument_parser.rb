@@ -1,10 +1,10 @@
 module GHtml2Pdf
+  # Error class raised for missing arguments
+  class MissingArgument < StandardError; end
+
   # Parses the command line arguments
   class ArgumentParser
     attr_reader :input, :output
-
-    # Error class raised for missing arguments
-    class MissingArgument < StandardError; end
 
     def initialize(argv)
       @input, @output, = argv

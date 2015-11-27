@@ -22,12 +22,12 @@ Feature: Basic usage
 
   Scenario: Command line feedback
     When I run `ghtml2pdf`
-    Then it should fail with:
+    Then it should fail with exactly:
       """
       An input filename is required
       """
     When I run `ghtml2pdf input.html`
-    Then it should fail with:
+    Then it should fail with exactly:
       """
       An output filename is required
       """

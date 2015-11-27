@@ -3,4 +3,9 @@
 require 'ghtml2pdf'
 
 Gtk.init
-GHtml2Pdf.run(ARGV)
+begin
+  GHtml2Pdf.run(ARGV)
+rescue GHtml2Pdf::MissingArgument => e
+  warn e.message
+  exit 1
+end
