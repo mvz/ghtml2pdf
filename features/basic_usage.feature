@@ -17,6 +17,7 @@ Feature: Basic usage
         </body>
       </html>
       """
-    When I successfully run `ghtml2pdf input.html output.pdf`
+    When I run `ghtml2pdf input.html output.pdf`
     Then the file "output.pdf" should exist
     And the file "output.pdf" should have default page properties
+    And the exit status should be 0
