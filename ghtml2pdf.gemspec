@@ -25,7 +25,7 @@ Gem::Specification.new do |spec|
   spec.executables   = ['ghtml2pdf']
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'gir_ffi-gtk', '~> 0.8.0'
+  spec.add_dependency 'gir_ffi-gtk', '~> 0.9.0'
   spec.add_dependency 'headless', '~> 2.2.0'
 
   spec.add_development_dependency 'bundler', '~> 1.7'
