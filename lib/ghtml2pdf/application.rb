@@ -42,7 +42,9 @@ module GHtml2Pdf
     end
 
     def page_setup
-      Gtk::PageSetup.new
+      Gtk::PageSetup.new.tap do |setup|
+        setup.set_paper_size Gtk::PaperSize.new Gtk::PAPER_NAME_A4
+      end
     end
 
     def web_context
