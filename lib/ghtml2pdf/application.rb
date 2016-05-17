@@ -1,7 +1,7 @@
 require 'gir_ffi-gtk3'
 require_relative 'argument_parser'
 
-GirFFI.setup :WebKit2, '4.0'
+GirFFI.setup :WebKit2
 
 module GHtml2Pdf
   # Main GHtml2Pdf application. Orchestrates the Gtk+ objects needed to load
