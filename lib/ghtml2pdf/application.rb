@@ -48,7 +48,7 @@ module GHtml2Pdf
     end
 
     def web_context
-      @web_context || WebKit2::WebContext.new.tap do |context|
+      @web_context ||= WebKit2::WebContext.new.tap do |context|
         context.set_process_model :multiple_secondary_processes
       end
     end
