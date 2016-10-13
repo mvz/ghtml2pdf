@@ -7,12 +7,8 @@ module GHtml2Pdf
   # Main GHtml2Pdf application. Orchestrates the Gtk+ objects needed to load
   # and print a web page to PDF.
   class Application
-    attr_reader :input, :output
-
     def initialize(argv)
-      argument_parser = ArgumentParser.new(argv)
-      @input = argument_parser.input
-      @output = argument_parser.output
+      @argument_parser = ArgumentParser.new(argv)
     end
 
     def run
@@ -33,6 +29,8 @@ module GHtml2Pdf
     end
 
     private
+
+    attr_reader :argument_parser
 
     def print_operation
       WebKit2::PrintOperation.new(web_view).tap do |operation|
@@ -73,11 +71,11 @@ module GHtml2Pdf
     end
 
     def output_uri
-      "file://#{File.expand_path(output)}"
+      "file://#{File.expand_path(argument_parser.output)}"
     end
 
     def input_uri
-      "file://#{File.expand_path(input)}"
+      "file://#{File.expand_path(argument_parser.input)}"
     end
   end
 end
