@@ -27,6 +27,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'gir_ffi-gtk', '~> 0.10.0'
   spec.add_dependency 'headless', '~> 2.2.0'
+  spec.add_dependency 'ruby-units', '~> 2.0.1'
 
   spec.add_development_dependency 'bundler', '~> 1.7'
   spec.add_development_dependency 'rake', '~> 11.1'

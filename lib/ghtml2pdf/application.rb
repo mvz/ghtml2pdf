@@ -7,12 +7,8 @@ module GHtml2Pdf
   # Main GHtml2Pdf application. Orchestrates the Gtk+ objects needed to load
   # and print a web page to PDF.
   class Application
-    attr_reader :input, :output
-
     def initialize(argv)
-      argument_parser = ArgumentParser.new(argv)
-      @input = argument_parser.input
-      @output = argument_parser.output
+      @argument_parser = ArgumentParser.new(argv)
     end
 
     def run
@@ -34,6 +30,24 @@ module GHtml2Pdf
 
     private
 
+    attr_reader :argument_parser
+
+    def top_margin
+      @top_margin ||= argument_parser.top_margin || Unit.new('2cm')
+    end
+
+    def bottom_margin
+      @bottom_margin ||= argument_parser.bottom_margin || Unit.new('3cm')
+    end
+
+    def left_margin
+      @left_margin ||= argument_parser.left_margin || Unit.new('2cm')
+    end
+
+    def right_margin
+      @right_margin ||= argument_parser.right_margin || Unit.new('2cm')
+    end
+
     def print_operation
       WebKit2::PrintOperation.new(web_view).tap do |operation|
         operation.page_setup = page_setup
@@ -44,6 +58,10 @@ module GHtml2Pdf
     def page_setup
       Gtk::PageSetup.new.tap do |setup|
         setup.set_paper_size Gtk::PaperSize.new Gtk::PAPER_NAME_A4
+        setup.set_top_margin top_margin.convert_to('mm').scalar, :mm
+        setup.set_bottom_margin bottom_margin.convert_to('mm').scalar, :mm
+        setup.set_left_margin left_margin.convert_to('mm').scalar, :mm
+        setup.set_right_margin right_margin.convert_to('mm').scalar, :mm
       end
     end
 
@@ -73,11 +91,11 @@ module GHtml2Pdf
     end
 
     def output_uri
-      "file://#{File.expand_path(output)}"
+      "file://#{File.expand_path(argument_parser.output)}"
     end
 
     def input_uri
-      "file://#{File.expand_path(input)}"
+      "file://#{File.expand_path(argument_parser.input)}"
     end
   end
 end
