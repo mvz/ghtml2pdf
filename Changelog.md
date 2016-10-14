@@ -1,5 +1,10 @@
 # Change log
 
+## 0.2.0 / 2016-02-06
+
+* Set wider margins by default
+* Allow setting all margins from the command line
+
 ## 0.1.1 / 2016-02-06
 
 * Run headlessly using xvfb
