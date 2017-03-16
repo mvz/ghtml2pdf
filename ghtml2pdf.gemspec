@@ -35,5 +35,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'cucumber', '~> 2.1'
   spec.add_development_dependency 'aruba', '~> 0.14.0'
   spec.add_development_dependency 'pry'
-  spec.add_development_dependency 'pdf-reader', '~> 1.4.0'
+  spec.add_development_dependency 'pdf-reader', '~> 2.0.0'
 end
