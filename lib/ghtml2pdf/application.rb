@@ -9,6 +9,7 @@ module GHtml2Pdf
   class Application
     def initialize(argv)
       @argument_parser = ArgumentParser.new(argv)
+      default_web_context.set_process_model :multiple_secondary_processes
     end
 
     def run
@@ -65,14 +66,12 @@ module GHtml2Pdf
       end
     end
 
-    def web_context
-      @web_context ||= WebKit2::WebContext.new.tap do |context|
-        context.set_process_model :multiple_secondary_processes
-      end
+    def default_web_context
+      @default_web_context ||= WebKit2::WebContext.get_default
     end
 
     def web_view
-      @web_view ||= WebKit2::WebView.new_with_context web_context
+      @web_view ||= WebKit2::WebView.new
     end
 
     def print_settings
