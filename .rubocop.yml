@@ -1,3 +1,8 @@
+# Gemspec block can have any length
+Metrics/BlockLength:
+  Exclude:
+    - ghtml2pdf.gemspec
+
 # Always use raise to raise exceptions
 Style/SignalException:
   EnforcedStyle: only_raise
