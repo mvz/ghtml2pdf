@@ -11,28 +11,38 @@ module GHtml2Pdf
     attr_reader :top_margin, :bottom_margin, :left_margin, :right_margin
 
     def initialize(argv)
-      option_parser.parse! argv
+      setup_banner
+      setup_margin_options
+      setup_help_message
+      parser.parse! argv
       @input, @output, = argv
       raise MissingArgument, 'An input filename is required' unless @input
       raise MissingArgument, 'An output filename is required' unless @output
     end
 
-    def option_parser
-      @option_parser ||=
-        OptionParser.new.tap do |parser|
-          parser.banner = "Usage: #{parser.program_name} [options] INFILE OUTFILE"
-          parser.on('--top-margin MARGIN', 'Set top margin') { |val| self.top_margin = val }
-          parser.on('--bottom-margin MARGIN', 'Set bottom margin') { |val| self.bottom_margin = val }
-          parser.on('--left-margin MARGIN', 'Set left margin') { |val| self.left_margin = val }
-          parser.on('--right-margin MARGIN', 'Set right margin') { |val| self.right_margin = val }
-          parser.on_tail('-h', '--help', 'Show this message') do
-            puts parser
-            exit
-          end
-        end
+    private
+
+    def parser
+      @parser ||= OptionParser.new
     end
 
-    private
+    def setup_banner
+      parser.banner = "Usage: #{parser.program_name} [options] INFILE OUTFILE"
+    end
+
+    def setup_margin_options
+      parser.on('--top-margin MARGIN', 'Set top margin') { |val| self.top_margin = val }
+      parser.on('--bottom-margin MARGIN', 'Set bottom margin') { |val| self.bottom_margin = val }
+      parser.on('--left-margin MARGIN', 'Set left margin') { |val| self.left_margin = val }
+      parser.on('--right-margin MARGIN', 'Set right margin') { |val| self.right_margin = val }
+    end
+
+    def setup_help_message
+      parser.on_tail('-h', '--help', 'Show this message') do
+        puts parser
+        exit
+      end
+    end
 
     def top_margin=(val)
       @top_margin = Unit.new(val)

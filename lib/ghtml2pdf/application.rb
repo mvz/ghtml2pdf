@@ -1,5 +1,6 @@
 require 'gir_ffi-gtk3'
 require_relative 'argument_parser'
+require_relative 'print_settings'
 
 GirFFI.setup :WebKit2
 
@@ -13,6 +14,17 @@ module GHtml2Pdf
     end
 
     def run
+      setup_load_handler
+      load_uri
+      Gtk.main
+      destroy_view
+    end
+
+    private
+
+    attr_reader :argument_parser
+
+    def setup_load_handler
       web_view.signal_connect 'load-changed' do |_, event, _|
         case event
         when :finished
@@ -21,17 +33,15 @@ module GHtml2Pdf
           Gtk.main_quit
         end
       end
-
-      web_view.load_uri(input_uri)
-
-      Gtk.main
-
-      web_view.destroy
     end
 
-    private
+    def load_uri
+      web_view.load_uri(input_uri)
+    end
 
-    attr_reader :argument_parser
+    def destroy_view
+      web_view.destroy
+    end
 
     def top_margin
       @top_margin ||= argument_parser.top_margin || Unit.new('2cm')
@@ -57,13 +67,29 @@ module GHtml2Pdf
     end
 
     def page_setup
-      Gtk::PageSetup.new.tap do |setup|
+      @page_setup ||= Gtk::PageSetup.new.tap do |setup|
         setup.set_paper_size Gtk::PaperSize.new Gtk::PAPER_NAME_A4
-        setup.set_top_margin top_margin.convert_to('mm').scalar, :mm
-        setup.set_bottom_margin bottom_margin.convert_to('mm').scalar, :mm
-        setup.set_left_margin left_margin.convert_to('mm').scalar, :mm
-        setup.set_right_margin right_margin.convert_to('mm').scalar, :mm
+        setup.set_top_margin top_margin_in_mm, :mm
+        setup.set_bottom_margin bottom_margin_in_mm, :mm
+        setup.set_left_margin left_margin_in_mm, :mm
+        setup.set_right_margin right_margin_in_mm, :mm
       end
+    end
+
+    def top_margin_in_mm
+      top_margin.convert_to('mm').scalar
+    end
+
+    def bottom_margin_in_mm
+      bottom_margin.convert_to('mm').scalar
+    end
+
+    def left_margin_in_mm
+      left_margin.convert_to('mm').scalar
+    end
+
+    def right_margin_in_mm
+      right_margin.convert_to('mm').scalar
     end
 
     def default_web_context
@@ -75,18 +101,7 @@ module GHtml2Pdf
     end
 
     def print_settings
-      Gtk::PrintSettings.new.tap do |settings|
-        settings.set_number_up 1
-        settings.set_reverse false
-        settings.set_print_pages :all
-        settings.set 'output-uri', output_uri
-        settings.set 'output-file-format', 'pdf'
-        settings.set_collate false
-        settings.set_n_copies 1
-        settings.set_printer 'Print to File'
-        settings.set_page_set :all
-        settings.set_scale 100.0
-      end
+      @print_settings ||= PrintSettings.new.tap { |it| it.output_uri = output_uri }
     end
 
     def output_uri
