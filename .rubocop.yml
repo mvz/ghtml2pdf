@@ -3,6 +3,10 @@ Metrics/BlockLength:
   Exclude:
     - ghtml2pdf.gemspec
 
+# Lenient line length
+Metrics/LineLength:
+  Max: 100
+
 # Always use raise to raise exceptions
 Style/SignalException:
   EnforcedStyle: only_raise
