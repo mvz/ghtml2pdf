@@ -1,3 +1,7 @@
 # Always use raise to raise exceptions
 Style/SignalException:
   EnforcedStyle: only_raise
+
+# I like to have symbols always look like symbols
+Style/SymbolArray:
+  EnforcedStyle: brackets
