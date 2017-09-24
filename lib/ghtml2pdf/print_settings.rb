@@ -4,6 +4,7 @@ module GHtml2Pdf
   # Specialized PrintSettings class for printing to a file.
   class PrintSettings < Gtk::PrintSettings
     def initialize
+      super
       set_number_up 1
       set_reverse false
       set_print_pages :all
