@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'ghtml2pdf/version'
 require 'ghtml2pdf/application'
 
