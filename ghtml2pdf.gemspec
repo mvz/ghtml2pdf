@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'ghtml2pdf/version'
@@ -13,6 +15,7 @@ Gem::Specification.new do |spec|
     Clean Ruby implemenentation of a HTML to PDF
     converter based on WebKit, WebKit2GTK+ and GirFFI
   '
+  spec.required_ruby_version = '>= 2.3.0'
   spec.homepage      = 'https://github.com/mvz/ghtml2pdf'
   spec.license       = 'MIT'
 

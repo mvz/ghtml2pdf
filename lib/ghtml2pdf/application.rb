@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'gir_ffi-gtk3'
 require_relative 'argument_parser'
 require_relative 'print_settings'
