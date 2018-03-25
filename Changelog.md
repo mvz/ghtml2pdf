@@ -1,4 +1,9 @@
-# Change log
+# Changelog
+
+## 0.3.0 / 2017-03-25
+
+* Update dependency on GirFFI-Gtk
+* Target Ruby 2.3 and up
 
 ## 0.2.0 / 2016-02-06
 
