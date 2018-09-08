@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.1 / 2018-09-08
+
+* Update dependency on GirFFI-Gtk
+
 ## 0.3.0 / 2017-03-25
 
 * Update dependency on GirFFI-Gtk
