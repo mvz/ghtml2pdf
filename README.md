@@ -44,12 +44,15 @@ Or install it yourself as:
 
     $ gem install ghtml2pdf
 
-You will also need to install the WebKit2GTK+, the Gtk+ bindings for WebKit2,
-and gobject-introspection.
+You will also need to install WebKit2GTK+, the Gtk+ bindings for WebKit2,
+and GObject Introspection. You should probably also install AT-SPI and Avahi to
+avoid some annoying warning messages.
 
 On Debian and Ubuntu, this can be accomplished by installing the packages
-`libgirepository1.0-dev`, `gobject-introspection` should be enough to get
-`rake test` working.
+`gir1.2-gtk3.0`, `gir1.2-webkit2-3.0`, `at-spi2-core` and `avahi-daemon`.
+
+To run the tests, you should additionally install `libgirepository1.0-dev` and
+`gobject-introspection`. This should be enough to get `rake test` working.
 
 ## Usage
 
