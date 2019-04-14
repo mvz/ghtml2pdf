@@ -15,7 +15,7 @@ Gem::Specification.new do |spec|
     Clean Ruby implemenentation of a HTML to PDF
     converter based on WebKit, WebKit2GTK+ and GirFFI
   '
-  spec.required_ruby_version = '>= 2.3.0'
+  spec.required_ruby_version = '>= 2.4.0'
   spec.homepage      = 'https://github.com/mvz/ghtml2pdf'
   spec.license       = 'MIT'
 
