@@ -9,6 +9,5 @@ describe GHtml2Pdf do
 
   it 'does something useful' do
     skip 'Think of something to test'
-    expect(false).to eq(true)
   end
 end
