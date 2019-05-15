@@ -14,6 +14,11 @@ Metrics/BlockLength:
 Metrics/LineLength:
   Max: 100
 
+# Tell FilePath about custom file name
+RSpec/FilePath:
+  CustomTransform:
+    GHtml2Pdf: ghtml2pdf
+
 # Always use raise to raise exceptions
 Style/SignalException:
   EnforcedStyle: only_raise
