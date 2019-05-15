@@ -1,4 +1,6 @@
-require: rubocop-performance
+require:
+  - rubocop-performance
+  - rubocop-rspec
 
 AllCops:
   TargetRubyVersion: 2.4
@@ -11,6 +13,11 @@ Metrics/BlockLength:
 # Lenient line length
 Metrics/LineLength:
   Max: 100
+
+# Tell FilePath about custom file name
+RSpec/FilePath:
+  CustomTransform:
+    GHtml2Pdf: ghtml2pdf
 
 # Always use raise to raise exceptions
 Style/SignalException:

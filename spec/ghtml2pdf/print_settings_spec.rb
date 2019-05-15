@@ -4,6 +4,6 @@ require 'spec_helper'
 
 RSpec.describe GHtml2Pdf::PrintSettings do
   it 'can be instantiated' do
-    GHtml2Pdf::PrintSettings.new
+    described_class.new
   end
 end
