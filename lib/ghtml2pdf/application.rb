@@ -16,7 +16,7 @@ module GHtml2Pdf
     end
 
     def run
-      setup_load_handler
+      setup_signal_handlers
       load_uri
       Gtk.main
       destroy_view
@@ -26,14 +26,16 @@ module GHtml2Pdf
 
     attr_reader :argument_parser
 
-    def setup_load_handler
+    def setup_signal_handlers
       web_view.signal_connect 'load-changed' do |_, event, _|
         case event
         when :finished
           print_operation.print
-          sleep 2
-          Gtk.main_quit
         end
+      end
+
+      print_operation.signal_connect 'finished' do |*args|
+        Gtk.main_quit
       end
     end
 
@@ -62,7 +64,7 @@ module GHtml2Pdf
     end
 
     def print_operation
-      WebKit2::PrintOperation.new(web_view).tap do |operation|
+      @print_operation ||= WebKit2::PrintOperation.new(web_view).tap do |operation|
         operation.page_setup = page_setup
         operation.print_settings = print_settings
       end
