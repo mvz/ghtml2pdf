@@ -8,6 +8,8 @@ before_install:
   - sudo apt-get install -y gir1.2-gtk-3.0 gir1.2-webkit2-3.0
   - sudo apt-get install -y at-spi2-core avahi-daemon
 
+script: "xvfb-run bundle exec rake"
+
 rvm:
   - 2.4
   - 2.5
