@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require 'gir_ffi-gtk3'
-require_relative 'argument_parser'
-require_relative 'print_settings'
+require "gir_ffi-gtk3"
+require_relative "argument_parser"
+require_relative "print_settings"
 
 GirFFI.setup :WebKit2
 
@@ -27,14 +27,14 @@ module GHtml2Pdf
     attr_reader :argument_parser
 
     def setup_signal_handlers
-      web_view.signal_connect 'load-changed' do |_, event, _|
+      web_view.signal_connect "load-changed" do |_, event, _|
         case event
         when :finished
           print_operation.print
         end
       end
 
-      print_operation.signal_connect 'finished' do |*args|
+      print_operation.signal_connect "finished" do |*_args|
         Gtk.main_quit
       end
     end
@@ -48,19 +48,19 @@ module GHtml2Pdf
     end
 
     def top_margin
-      @top_margin ||= argument_parser.top_margin || Unit.new('2cm')
+      @top_margin ||= argument_parser.top_margin || Unit.new("2cm")
     end
 
     def bottom_margin
-      @bottom_margin ||= argument_parser.bottom_margin || Unit.new('3cm')
+      @bottom_margin ||= argument_parser.bottom_margin || Unit.new("3cm")
     end
 
     def left_margin
-      @left_margin ||= argument_parser.left_margin || Unit.new('2cm')
+      @left_margin ||= argument_parser.left_margin || Unit.new("2cm")
     end
 
     def right_margin
-      @right_margin ||= argument_parser.right_margin || Unit.new('2cm')
+      @right_margin ||= argument_parser.right_margin || Unit.new("2cm")
     end
 
     def print_operation
@@ -81,19 +81,19 @@ module GHtml2Pdf
     end
 
     def top_margin_in_mm
-      top_margin.convert_to('mm').scalar
+      top_margin.convert_to("mm").scalar
     end
 
     def bottom_margin_in_mm
-      bottom_margin.convert_to('mm').scalar
+      bottom_margin.convert_to("mm").scalar
     end
 
     def left_margin_in_mm
-      left_margin.convert_to('mm').scalar
+      left_margin.convert_to("mm").scalar
     end
 
     def right_margin_in_mm
-      right_margin.convert_to('mm').scalar
+      right_margin.convert_to("mm").scalar
     end
 
     def default_web_context

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require 'optparse'
-require 'ruby-units'
+require "optparse"
+require "ruby-units"
 
 module GHtml2Pdf
   # Error class raised for missing arguments
@@ -18,8 +18,8 @@ module GHtml2Pdf
       setup_help_message
       parser.parse! argv
       @input, @output, = argv
-      raise MissingArgument, 'An input filename is required' unless @input
-      raise MissingArgument, 'An output filename is required' unless @output
+      raise MissingArgument, "An input filename is required" unless @input
+      raise MissingArgument, "An output filename is required" unless @output
     end
 
     private
@@ -33,14 +33,14 @@ module GHtml2Pdf
     end
 
     def setup_margin_options
-      parser.on('--top-margin MARGIN', 'Set top margin') { |val| self.top_margin = val }
-      parser.on('--bottom-margin MARGIN', 'Set bottom margin') { |val| self.bottom_margin = val }
-      parser.on('--left-margin MARGIN', 'Set left margin') { |val| self.left_margin = val }
-      parser.on('--right-margin MARGIN', 'Set right margin') { |val| self.right_margin = val }
+      parser.on("--top-margin MARGIN", "Set top margin") { |val| self.top_margin = val }
+      parser.on("--bottom-margin MARGIN", "Set bottom margin") { |val| self.bottom_margin = val }
+      parser.on("--left-margin MARGIN", "Set left margin") { |val| self.left_margin = val }
+      parser.on("--right-margin MARGIN", "Set right margin") { |val| self.right_margin = val }
     end
 
     def setup_help_message
-      parser.on_tail('-h', '--help', 'Show this message') do
+      parser.on_tail("-h", "--help", "Show this message") do
         puts parser
         exit
       end

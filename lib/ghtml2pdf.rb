@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require 'ghtml2pdf/version'
-require 'ghtml2pdf/application'
+require "ghtml2pdf/version"
+require "ghtml2pdf/application"
 
 # Main entry point for GHtml2Pdf.
 module GHtml2Pdf
