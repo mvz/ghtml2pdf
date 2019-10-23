@@ -34,9 +34,13 @@ module GHtml2Pdf
 
     def setup_margin_options
       parser.on("--top-margin MARGIN", "Set top margin") { |val| self.top_margin = val }
-      parser.on("--bottom-margin MARGIN", "Set bottom margin") { |val| self.bottom_margin = val }
+      parser.on("--bottom-margin MARGIN", "Set bottom margin") do |val|
+        self.bottom_margin = val
+      end
       parser.on("--left-margin MARGIN", "Set left margin") { |val| self.left_margin = val }
-      parser.on("--right-margin MARGIN", "Set right margin") { |val| self.right_margin = val }
+      parser.on("--right-margin MARGIN", "Set right margin") do |val|
+        self.right_margin = val
+      end
     end
 
     def setup_help_message
