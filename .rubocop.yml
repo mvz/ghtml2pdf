@@ -5,24 +5,60 @@ require:
 AllCops:
   TargetRubyVersion: 2.4
 
+# Don't force lonely closing parentheses
+Layout/MultilineMethodCallBraceLayout:
+  EnforcedStyle: same_line
+
+# Multi-line method calls should be simply indented. Aligning them makes it
+# even harder to keep a sane line length.
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+# Multi-line assignment should be simply indented. Aligning them makes it even
+# harder to keep a sane line length.
+Layout/MultilineOperationIndentation:
+  EnforcedStyle: indented
+
+# Force consistent spacing independent of block contents
+Layout/SpaceBeforeBlockBraces:
+  EnforcedStyleForEmptyBraces: space
+
+# This cop gives bad advice
+Lint/AmbiguousBlockAssociation:
+  Enabled: false
+
+# Allow if (foo = get_foo) style
+Lint/AssignmentInCondition:
+  AllowSafeAssignment: true
+
 # Gemspec block can have any length
 Metrics/BlockLength:
   Exclude:
     - ghtml2pdf.gemspec
 
-# Lenient line length
+# Be lenient with line length
 Metrics/LineLength:
-  Max: 100
+  Max: 92
+
+# Allow and/or for control flow only
+Style/AndOr:
+  EnforcedStyle: conditionals
+
+# Allow explicit return with multiple return values
+Style/RedundantReturn:
+  AllowMultipleReturnValues: true
+
+# Do not commit to use of interpolation
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+# Prefer symbols to look like symbols
+Style/SymbolArray:
+  EnforcedStyle: brackets
+
+# Project-specific configuration goes here.
 
 # Tell FilePath about custom file name
 RSpec/FilePath:
   CustomTransform:
     GHtml2Pdf: ghtml2pdf
-
-# Always use raise to raise exceptions
-Style/SignalException:
-  EnforcedStyle: only_raise
-
-# I like to have symbols always look like symbols
-Style/SymbolArray:
-  EnforcedStyle: brackets
