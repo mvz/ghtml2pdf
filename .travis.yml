@@ -1,13 +1,25 @@
 language: ruby
 
+dist: xenial
+
+services:
+  - xvfb
+
 before_install:
   - sudo apt-get update
-  - sudo apt-get install -y libgirepository1.0-dev gobject-introspection
-  - sudo apt-get install -y gir1.2-gtk-3.0 gir1.2-webkit2-3.0
-  - sudo apt-get install -y at-spi2-core avahi-daemon
-  - sudo apt-get install -y libwebkit2gtk-3.0-dev
+  # Provides libgirepository-1.0.so.1
+  - sudo apt-get install libgirepository-1.0-1
+  # Needed to avoid warnings about retrieving accessibility bus address
+  - sudo apt-get install at-spi2-core
+  # GIR data for Gtk 3
+  - sudo apt-get install gir1.2-gtk-3.0
+  # GIR data for GtkWebkit 3
+  - sudo apt-get install gir1.2-webkit2-3.0
+  # We shouldn't need these since we should use the so versions in the non-dev package
+  - sudo apt-get install libwebkit2gtk-3.0-dev
 
-script: "xvfb-run bundle exec rake"
+cache:
+  bundler: true
 
 rvm:
   - 2.4
