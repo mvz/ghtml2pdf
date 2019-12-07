@@ -51,9 +51,6 @@ avoid some annoying warning messages.
 On Debian and Ubuntu, this can be accomplished by installing the packages
 `gir1.2-gtk3.0`, `gir1.2-webkit2-3.0`, `at-spi2-core` and `avahi-daemon`.
 
-To run the tests, you should additionally install `libgirepository1.0-dev` and
-`gobject-introspection`. This should be enough to get `rake test` working.
-
 ## Usage
 
 The intended usage will be something like:
