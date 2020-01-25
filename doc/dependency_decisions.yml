@@ -1,29 +1,29 @@
 ---
-- - :whitelist
+- - :permit
   - MIT
   - :who: 
     :why: 
     :versions: []
     :when: 2017-07-23 09:39:15.738461398 Z
-- - :whitelist
+- - :permit
   - Simplified BSD
   - :who: 
     :why: 
     :versions: []
     :when: 2017-07-23 09:39:39.945079261 Z
-- - :whitelist
+- - :permit
   - New BSD
   - :who: 
     :why: 
     :versions: []
     :when: 2017-07-23 09:39:47.761714300 Z
-- - :whitelist
+- - :permit
   - LGPL-2.1
   - :who: 
     :why: 
     :versions: []
     :when: 2017-07-23 09:39:55.771479415 Z
-- - :whitelist
+- - :permit
   - LGPL-2.1+
   - :who: 
     :why: 
