@@ -9,8 +9,7 @@ module GHtml2Pdf
 
   # Parses the command line arguments
   class ArgumentParser
-    attr_reader :input, :output
-    attr_reader :top_margin, :bottom_margin, :left_margin, :right_margin
+    attr_reader :input, :output, :top_margin, :bottom_margin, :left_margin, :right_margin
 
     def initialize(argv)
       setup_banner
