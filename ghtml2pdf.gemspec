@@ -22,10 +22,7 @@ Gem::Specification.new do |spec|
   spec.metadata["source_code_uri"] = "https://github.com/mvz/ghtml2pdf"
   spec.metadata["changelog_uri"] = "https://github.com/mvz/ghtml2pdf/blob/master/Changelog.md"
 
-  spec.files         = Dir["lib/**/*.rb",
-                           "Changelog.md",
-                           "LICENSE.txt",
-                           "README.md"]
+  spec.files = File.read("Manifest.txt").split
   spec.bindir        = "bin"
   spec.executables   = ["ghtml2pdf"]
   spec.require_paths = ["lib"]
@@ -38,5 +35,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "cucumber", "~> 4.0"
   spec.add_development_dependency "pdf-reader", "~> 2.4.0"
   spec.add_development_dependency "rake", "~> 13.0"
+  spec.add_development_dependency "rake-manifest", "~> 0.1.0"
   spec.add_development_dependency "rspec", "~> 3.3"
 end
