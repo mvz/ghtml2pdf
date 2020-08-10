@@ -1,5 +1,6 @@
 require:
   - rubocop-performance
+  - rubocop-packaging
   - rubocop-rspec
 
 AllCops:
@@ -40,6 +41,11 @@ Lint/AssignmentInCondition:
 Metrics/BlockLength:
   Exclude:
     - ghtml2pdf.gemspec
+
+# require_relative makes sense in gemspec
+Packaging/RelativeRequireToLib:
+  Exclude:
+    - '*.gemspec'
 
 Performance/StartWith:
   AutoCorrect: true
