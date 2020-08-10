@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 require "gir_ffi-gtk3"
-require_relative "argument_parser"
-require_relative "print_settings"
+require "ghtml2pdf/argument_parser"
+require "ghtml2pdf/print_settings"
 
 GirFFI.setup :WebKit2
 
