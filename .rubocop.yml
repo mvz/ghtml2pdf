@@ -42,11 +42,6 @@ Metrics/BlockLength:
   Exclude:
     - ghtml2pdf.gemspec
 
-# require_relative makes sense in gemspec
-Packaging/RelativeRequireToLib:
-  Exclude:
-    - '*.gemspec'
-
 Performance/StartWith:
   AutoCorrect: true
 
