@@ -32,7 +32,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "ruby-units", "~> 2.2"
 
   spec.add_development_dependency "aruba", "~> 1.0"
-  spec.add_development_dependency "cucumber", "~> 5.0"
+  spec.add_development_dependency "cucumber", "~> 6.0"
   spec.add_development_dependency "pdf-reader", "~> 2.4.0"
   spec.add_development_dependency "rake", "~> 13.0"
   spec.add_development_dependency "rake-manifest", "~> 0.2.0"
