@@ -9,10 +9,8 @@ Gem::Specification.new do |spec|
   spec.email         = ["matijs@matijs.net"]
 
   spec.summary       = "HTML to PDF converter based on WebKit2GTK+"
-  spec.description   = '
-    Clean Ruby implemenentation of a HTML to PDF
-    converter based on WebKit, WebKit2GTK+ and GirFFI
-  '
+  spec.description   = "Clean Ruby implemenentation of a HTML to PDF" \
+                       " converter based on WebKit, WebKit2GTK+ and GirFFI"
   spec.homepage      = "https://github.com/mvz/ghtml2pdf"
   spec.license       = "MIT"
 
