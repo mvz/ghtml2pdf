@@ -9,10 +9,8 @@ Gem::Specification.new do |spec|
   spec.email         = ["matijs@matijs.net"]
 
   spec.summary       = "HTML to PDF converter based on WebKit2GTK+"
-  spec.description   = '
-    Clean Ruby implemenentation of a HTML to PDF
-    converter based on WebKit, WebKit2GTK+ and GirFFI
-  '
+  spec.description   = "Clean Ruby implemenentation of a HTML to PDF" \
+                       " converter based on WebKit, WebKit2GTK+ and GirFFI"
   spec.homepage      = "https://github.com/mvz/ghtml2pdf"
   spec.license       = "MIT"
 
@@ -37,7 +35,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake", "~> 13.0"
   spec.add_development_dependency "rake-manifest", "~> 0.2.0"
   spec.add_development_dependency "rspec", "~> 3.3"
-  spec.add_development_dependency "rubocop", "~> 1.17.0"
+  spec.add_development_dependency "rubocop", "~> 1.18.1"
   spec.add_development_dependency "rubocop-packaging", "~> 0.5.0"
   spec.add_development_dependency "rubocop-performance", "~> 1.11.0"
   spec.add_development_dependency "rubocop-rspec", "~> 2.4.0"
