@@ -29,7 +29,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "gir_ffi-gtk", "~> 0.15.0"
   spec.add_dependency "ruby-units", "~> 2.2"
 
-  spec.add_development_dependency "aruba", "~> 1.0"
+  spec.add_development_dependency "aruba", "~> 2.0"
   spec.add_development_dependency "cucumber", "~> 6.0"
   spec.add_development_dependency "pdf-reader", "~> 2.5.0"
   spec.add_development_dependency "rake", "~> 13.0"
