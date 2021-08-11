@@ -9,10 +9,3 @@ Feature: Command Line Errors
       """
       An input filename is required
       """
-
-  Scenario: Forgetting the output file
-    When I run `ghtml2pdf input.html`
-    Then it should fail with exactly:
-      """
-      An output filename is required
-      """

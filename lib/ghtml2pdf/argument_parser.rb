@@ -18,7 +18,8 @@ module GHtml2Pdf
       parser.parse! argv
       @input, @output, = argv
       raise MissingArgument, "An input filename is required" unless @input
-      raise MissingArgument, "An output filename is required" unless @output
+
+      @output ||= "#{File.basename(@input, ".*")}.pdf"
     end
 
     private

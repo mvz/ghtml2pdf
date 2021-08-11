@@ -22,4 +22,14 @@ describe GHtml2Pdf::ArgumentParser do
     parser = described_class.new ["--right-margin", "3mm", "INFILE", "OUTFILE"]
     expect(parser.right_margin).to eq Unit.new("3mm")
   end
+
+  it "sets outfile based on infile with html extension" do
+    parser = described_class.new ["foobar.html"]
+    expect(parser.output).to eq "foobar.pdf"
+  end
+
+  it "sets outfile based on infile with htm extension" do
+    parser = described_class.new ["foobar.htm"]
+    expect(parser.output).to eq "foobar.pdf"
+  end
 end
