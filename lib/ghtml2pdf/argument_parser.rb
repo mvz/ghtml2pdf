@@ -4,8 +4,8 @@ require "optparse"
 require "ruby-units"
 
 module GHtml2Pdf
-  # Error class raised for missing arguments
-  class MissingArgument < StandardError; end
+  # Error class raised for argument errors
+  class ArgumentError < StandardError; end
 
   # Parses the command line arguments
   class ArgumentParser
@@ -20,6 +20,7 @@ module GHtml2Pdf
       raise MissingArgument, "An input filename is required" unless @input
 
       @output ||= "#{File.basename(@input, ".*")}.pdf"
+      raise ArgumentError, "Input and output files cannot be the same" if @input == @output
     end
 
     private

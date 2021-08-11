@@ -32,4 +32,9 @@ describe GHtml2Pdf::ArgumentParser do
     parser = described_class.new ["foobar.htm"]
     expect(parser.output).to eq "foobar.pdf"
   end
+
+  it "raises an error if infile and outfile are the same" do
+    expect { described_class.new ["INFILE", "INFILE"] }
+      .to raise_error GHtml2Pdf::ArgumentError
+  end
 end

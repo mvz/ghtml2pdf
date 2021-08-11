@@ -37,9 +37,10 @@ Lint/AmbiguousBlockAssociation:
 Lint/AssignmentInCondition:
   AllowSafeAssignment: true
 
-# Gemspec block can have any length
+# RSpec describe blocks and Gemspec block can have any length
 Metrics/BlockLength:
   Exclude:
+    - 'spec/**/*'
     - ghtml2pdf.gemspec
 
 Performance/StartWith:
@@ -82,6 +83,10 @@ Style/SymbolArray:
 # Accessors are only trivial if they match the ivar name
 Style/TrivialAccessors:
   ExactNameMatch: true
+
+# Allow short arrays to look like arrays
+Style/WordArray:
+  MinSize: 3
 
 # Project-specific configuration goes here.
 

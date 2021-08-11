@@ -11,7 +11,7 @@ module GHtml2Pdf
   def self.run(argv)
     Gtk.init
     GHtml2Pdf::Application.new(argv).run
-  rescue GHtml2Pdf::MissingArgument => e
+  rescue GHtml2Pdf::ArgumentError => e
     warn e.message
     exit 1
   end
