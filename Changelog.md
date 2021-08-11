@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.4.0 / 2021-08-11
+
+* Target Ruby 2.5 and up
+* Update dependency on GirFFI-Gtk and GirFFI
+* Stop using Headless; This gem now needs an active graphical session to run
+
 ## 0.3.1 / 2019-02-13
 
 * Update dependency on GirFFI-Gtk
