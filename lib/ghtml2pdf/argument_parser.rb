@@ -17,7 +17,7 @@ module GHtml2Pdf
       setup_help_message
       parser.parse! argv
       @input, @output, = argv
-      raise MissingArgument, "An input filename is required" unless @input
+      raise ArgumentError, "An input filename is required" unless @input
 
       @output ||= "#{File.basename(@input, ".*")}.pdf"
       raise ArgumentError, "Input and output files cannot be the same" if @input == @output
