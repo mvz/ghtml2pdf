@@ -3,17 +3,16 @@
 require_relative "lib/ghtml2pdf/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "ghtml2pdf"
-  spec.version       = GHtml2Pdf::VERSION
-  spec.authors       = ["Matijs van Zuijlen"]
-  spec.email         = ["matijs@matijs.net"]
+  spec.name = "ghtml2pdf"
+  spec.version = GHtml2Pdf::VERSION
+  spec.authors = ["Matijs van Zuijlen"]
+  spec.email = ["matijs@matijs.net"]
 
-  spec.summary       = "HTML to PDF converter based on WebKit2GTK+"
-  spec.description   = "Clean Ruby implemenentation of a HTML to PDF" \
-                       " converter based on WebKit, WebKit2GTK+ and GirFFI"
-  spec.homepage      = "https://github.com/mvz/ghtml2pdf"
-  spec.license       = "MIT"
-
+  spec.summary = "HTML to PDF converter based on WebKit2GTK+"
+  spec.description = "Clean Ruby implemenentation of a HTML to PDF" \
+                     " converter based on WebKit, WebKit2GTK+ and GirFFI"
+  spec.homepage = "https://github.com/mvz/ghtml2pdf"
+  spec.license = "MIT"
   spec.required_ruby_version = ">= 2.6.0"
 
   spec.metadata["homepage_uri"] = spec.homepage
@@ -22,8 +21,8 @@ Gem::Specification.new do |spec|
   spec.metadata["rubygems_mfa_required"] = "true"
 
   spec.files = File.read("Manifest.txt").split
-  spec.bindir        = "bin"
-  spec.executables   = ["ghtml2pdf"]
+  spec.bindir = "bin"
+  spec.executables = ["ghtml2pdf"]
   spec.require_paths = ["lib"]
 
   spec.add_dependency "gir_ffi", "~> 0.15.2"
