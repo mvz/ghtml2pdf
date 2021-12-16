@@ -31,7 +31,7 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "aruba", "~> 2.0"
   spec.add_development_dependency "cucumber", "~> 7.0"
-  spec.add_development_dependency "pdf-reader", "~> 2.6.0"
+  spec.add_development_dependency "pdf-reader", "~> 2.7.0"
   spec.add_development_dependency "rake", "~> 13.0"
   spec.add_development_dependency "rake-manifest", "~> 0.2.0"
   spec.add_development_dependency "rspec", "~> 3.3"
