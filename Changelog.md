@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.5.0 / 2022-04-10
+
+* Set output file from input file if not provided
+* Abort if input and output file names are identical
+* Drop support for Ruby 2.5
+* Add support for Ruby 3.1
+
 ## 0.4.0 / 2021-08-11
 
 * Target Ruby 2.5 and up
