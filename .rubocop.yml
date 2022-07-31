@@ -1,11 +1,15 @@
 require:
-  - rubocop-performance
   - rubocop-packaging
+  - rubocop-performance
   - rubocop-rspec
 
 AllCops:
   NewCops: enable
   TargetRubyVersion: 2.7
+
+# Spaces in strings with line continuations go at the beginning of the line.
+Layout/LineContinuationLeadingSpace:
+  EnforcedStyle: leading
 
 # Be lenient with line length
 Layout/LineLength:
