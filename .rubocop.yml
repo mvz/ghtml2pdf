@@ -98,7 +98,7 @@ Style/WordArray:
 
 # Project-specific configuration goes here.
 
-# Tell FilePath about custom file name
-RSpec/FilePath:
+# Tell SpecFilePathFormat about custom file name
+RSpec/SpecFilePathFormat:
   CustomTransform:
     GHtml2Pdf: ghtml2pdf
