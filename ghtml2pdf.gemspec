@@ -25,8 +25,8 @@ Gem::Specification.new do |spec|
   spec.executables = ["ghtml2pdf"]
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "gir_ffi", "~> 0.16.0"
-  spec.add_dependency "gir_ffi-gtk", "~> 0.16.0"
+  spec.add_dependency "gir_ffi", "~> 0.17.0"
+  spec.add_dependency "gir_ffi-gtk", "~> 0.17.0"
   spec.add_dependency "ruby-units", "~> 4.0"
 
   spec.add_development_dependency "aruba", "~> 2.0"
