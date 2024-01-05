@@ -34,15 +34,21 @@ and provide feedback. Also see Contributing below.
 
 Add this line to your application's Gemfile:
 
-    gem 'ghtml2pdf'
+```ruby
+gem 'ghtml2pdf'
+```
 
 And then execute:
 
-    $ bundle
+```bash
+bundle
+```
 
 Or install it yourself as:
 
-    $ gem install ghtml2pdf
+```bash
+gem install ghtml2pdf
+```
 
 You will also need to install WebKit2GTK+, the Gtk+ bindings for WebKit2,
 and GObject Introspection. You should probably also install AT-Spi 2 to
@@ -56,7 +62,9 @@ On Debian and Ubuntu, this can be accomplished by installing the packages
 
 The intended usage will be something like:
 
-    ghtml2pdf input.html output.pdf
+```bash
+ghtml2pdf input.html output.pdf
+```
 
 ## Development
 
@@ -83,10 +91,12 @@ out.
 * Try not to include changes that are irrelevant to your feature in the
   same commit.
 
-You can submit your tickets and pull requests at [GHtml2Pdf's GitHub
-repository](https://github.com/mvz/ghtml2pdf).
+You can submit your tickets and pull requests at
+[GHtml2Pdf's GitHub repository](https://github.com/mvz/ghtml2pdf).
 
 ## License
+
+Copyright &copy; 2015&ndash;2024 [Matijs van Zuijlen](http://www.matijs.net)
 
 The gem is available as open source under the terms of the
 [MIT License](http://opensource.org/licenses/MIT).

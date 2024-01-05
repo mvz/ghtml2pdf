@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.5.1 / 2022-04-10
+
+* Support Ruby 3.0 through 3.3, dropping support for 2.6 and 2.7
+  ([#83], [#90], and [#100] by [mvz])
+
+[mvz]: https://github.com/mvz
+
+[#83]: https://github.com/mvz/ghtml2pdf/pull/83
+[#90]: https://github.com/mvz/ghtml2pdf/pull/90
+[#100]: https://github.com/mvz/ghtml2pdf/pull/100
+
 ## 0.5.0 / 2022-04-10
 
 * Set output file from input file if not provided
