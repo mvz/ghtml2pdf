@@ -38,5 +38,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rubocop", "~> 1.56"
   spec.add_development_dependency "rubocop-packaging", "~> 0.5.2"
   spec.add_development_dependency "rubocop-performance", "~> 1.19"
-  spec.add_development_dependency "rubocop-rspec", "~> 2.24"
+  spec.add_development_dependency "rubocop-rspec", "~> 3.0"
 end
