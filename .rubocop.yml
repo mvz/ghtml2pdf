@@ -98,10 +98,6 @@ Style/WordArray:
 
 # Project-specific configuration goes here.
 
-# Disabled because RSpec/SpecFilePathFormat is automatically enabled as a new cop
-RSpec/FilePath:
-  Enabled: false
-
 # Tell SpecFilePathFormat about custom file name
 RSpec/SpecFilePathFormat:
   CustomTransform:
