@@ -13,7 +13,8 @@ Gem::Specification.new do |spec|
                      " converter based on WebKit, WebKit2GTK+ and GirFFI"
   spec.homepage = "https://github.com/mvz/ghtml2pdf"
   spec.license = "MIT"
-  spec.required_ruby_version = ">= 3.0.0"
+
+  spec.required_ruby_version = ">= 3.1.0"
 
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = "https://github.com/mvz/ghtml2pdf"
@@ -30,7 +31,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "ruby-units", "~> 4.0"
 
   spec.add_development_dependency "aruba", "~> 2.0"
-  spec.add_development_dependency "cucumber", "~> 9.0"
+  spec.add_development_dependency "cucumber", "~> 9.2", ">= 9.2.1"
   spec.add_development_dependency "pdf-reader", "~> 2.9"
   spec.add_development_dependency "rake", "~> 13.0"
   spec.add_development_dependency "rake-manifest", "~> 0.2.0"
