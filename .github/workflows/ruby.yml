@@ -16,7 +16,7 @@ name: CI
 jobs:
   test:
 
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
 
     strategy:
       matrix:
@@ -39,7 +39,7 @@ jobs:
           # Needed to avoid warnings about retrieving accessibility bus address
           sudo apt-get install at-spi2-core
           # GIR data for GtkWebkit 4
-          sudo apt-get install gir1.2-webkit2-4.0 --no-install-recommends
+          sudo apt-get install gir1.2-webkit2-4.1 --no-install-recommends
           # Provides xvfb-run
           sudo apt-get install xvfb
 
