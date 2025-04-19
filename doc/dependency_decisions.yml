@@ -1,43 +1,49 @@
 ---
 - - :permit
   - MIT
-  - :who: 
-    :why: 
+  - :who:
+    :why:
     :versions: []
     :when: 2017-07-23 09:39:15.738461398 Z
 - - :permit
   - Simplified BSD
-  - :who: 
-    :why: 
+  - :who:
+    :why:
     :versions: []
     :when: 2017-07-23 09:39:39.945079261 Z
 - - :permit
   - New BSD
-  - :who: 
-    :why: 
+  - :who:
+    :why:
     :versions: []
     :when: 2017-07-23 09:39:47.761714300 Z
 - - :permit
   - LGPL-2.1
-  - :who: 
-    :why: 
+  - :who:
+    :why:
     :versions: []
     :when: 2017-07-23 09:39:55.771479415 Z
 - - :permit
   - LGPL-2.1+
-  - :who: 
-    :why: 
+  - :who:
+    :why:
     :versions: []
     :when: 2017-09-24 15:18:51.744569535 Z
 - - :approve
   - ttfunk
-  - :who: 
-    :why: 
+  - :who:
+    :why:
     :versions: []
     :when: 2020-01-08 20:31:19.357265612 Z
 - - :permit
   - Apache 2.0
-  - :who: 
-    :why: 
+  - :who:
+    :why:
     :versions: []
     :when: 2020-06-11 16:57:23.656737911 Z
+- - :permit
+  - ruby
+  - :who:
+    :why:
+    :versions: []
+    :when: 2025-04-19 18:44:33.171151224 Z
