@@ -105,7 +105,7 @@ module GHtml2Pdf
     end
 
     def print_settings
-      @print_settings ||= PrintSettings.new.tap { |it| it.output_uri = output_uri }
+      @print_settings ||= PrintSettings.new.tap { _1.output_uri = output_uri }
     end
 
     def output_uri
