@@ -29,15 +29,4 @@ Gem::Specification.new do |spec|
   spec.add_dependency "gir_ffi", "~> 0.18.0"
   spec.add_dependency "gir_ffi-gtk", "~> 0.18.0"
   spec.add_dependency "ruby-units", "~> 4.0"
-
-  spec.add_development_dependency "aruba", "~> 2.3"
-  spec.add_development_dependency "cucumber", "~> 10.0"
-  spec.add_development_dependency "pdf-reader", "~> 2.9"
-  spec.add_development_dependency "rake", "~> 13.0"
-  spec.add_development_dependency "rake-manifest", "~> 0.2.0"
-  spec.add_development_dependency "rspec", "~> 3.3"
-  spec.add_development_dependency "rubocop", "~> 1.80"
-  spec.add_development_dependency "rubocop-packaging", "~> 0.6.0"
-  spec.add_development_dependency "rubocop-performance", "~> 1.25"
-  spec.add_development_dependency "rubocop-rspec", "~> 3.7"
 end
