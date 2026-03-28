@@ -4,10 +4,12 @@ require "pdf/reader"
 require "stringio"
 
 Then(/^the file "([^"]*)" should have default page properties$/) do |file|
-  io = File.open expand_path(file)
-  reader = PDF::Reader.new(io)
+  pages = File.open expand_path(file) do |io|
+    reader = PDF::Reader.new(io)
+    reader.pages
+  end
 
-  reader.pages.each do |page|
+  pages.each do |page|
     box = page.attributes[:MediaBox]
 
     aggregate_failures "A4 page size" do
