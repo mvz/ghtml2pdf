@@ -12,8 +12,8 @@ group :development, :test do
   gem "rake", "~> 13.0"
   gem "rake-manifest", "~> 0.2.0"
   gem "rspec", "~> 3.3"
-  gem "rubocop", "~> 1.80"
+  gem "rubocop", "~> 1.86"
   gem "rubocop-packaging", "~> 0.6.0"
-  gem "rubocop-performance", "~> 1.25"
-  gem "rubocop-rspec", "~> 3.7"
+  gem "rubocop-performance", "~> 1.26"
+  gem "rubocop-rspec", "~> 3.9"
 end
