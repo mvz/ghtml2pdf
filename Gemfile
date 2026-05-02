@@ -7,7 +7,7 @@ gemspec
 
 group :development, :test do
   gem "aruba", "~> 2.3"
-  gem "cucumber", "~> 10.0"
+  gem "cucumber", "~> 11.0"
   gem "pdf-reader", "~> 2.9"
   gem "rake", "~> 13.0"
   gem "rake-manifest", "~> 0.2.0"
