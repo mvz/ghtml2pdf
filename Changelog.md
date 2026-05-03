@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.5.3 / 2026-05-03
+
+* Support Ruby 3.2 through 4.0, dropping support for Ruby 3.1
+  ([#113] and [#119] by [mvz])
+* Update `gir_ffi` and `gir_ffi-gtk` dependencies to 0.19.0 ([#122] by [mvz])
+
+[#113]: https://github.com/mvz/ghtml2pdf/pull/113
+[#119]: https://github.com/mvz/ghtml2pdf/pull/119
+[#122]: https://github.com/mvz/ghtml2pdf/pull/122
+
 ## 0.5.2 / 2025-04-19
 
 * Support Ruby 3.1 through 3.4 ([#106] by [mvz])

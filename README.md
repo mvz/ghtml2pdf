@@ -96,7 +96,7 @@ You can submit your tickets and pull requests at
 
 ## License
 
-Copyright &copy; 2015&ndash;2024 [Matijs van Zuijlen](http://www.matijs.net)
+Copyright &copy; 2015&ndash;2026 [Matijs van Zuijlen](http://www.matijs.net)
 
 The gem is available as open source under the terms of the
 [MIT License](http://opensource.org/licenses/MIT).
