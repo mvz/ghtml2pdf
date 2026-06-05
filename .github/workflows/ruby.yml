@@ -38,16 +38,14 @@ jobs:
           sudo apt-get install at-spi2-core
           # GIR data for GtkWebkit 4
           sudo apt-get install gir1.2-webkit2-4.1 --no-install-recommends
-          # Provides xvfb-run
-          sudo apt-get install xvfb
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: ${{ matrix.ruby }}
           bundler-cache: true
-      - name: Run tests in a dbus session
-        run: xvfb-run dbus-run-session bundle exec rake
+      - name: Run tests
+        run: bundle exec rake
 
   rubocop:
 
