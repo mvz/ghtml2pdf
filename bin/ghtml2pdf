@@ -2,5 +2,8 @@
 # frozen_string_literal: true
 
 require "ghtml2pdf"
+require "headless"
 
-GHtml2Pdf.run(ARGV)
+Headless.ly do
+  GHtml2Pdf.run(ARGV)
+end
