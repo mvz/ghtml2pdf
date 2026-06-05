@@ -28,5 +28,6 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "gir_ffi", "~> 0.19.0"
   spec.add_dependency "gir_ffi-gtk", "~> 0.19.0"
+  spec.add_dependency "headless", "~> 3.0.0"
   spec.add_dependency "ruby-units", "~> 4.0"
 end
