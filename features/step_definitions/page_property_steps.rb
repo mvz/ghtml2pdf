@@ -2,8 +2,13 @@
 
 Then(/^the file "([^"]*)" should have default page properties$/) do |file|
   full_path = expand_path(file)
-  info = `pdfinfo #{full_path}`
+  uri = "file://#{full_path}"
+  doc = Poppler::Document.new_from_file uri
 
-  expect(info).to match(/Page size: +595 x 842 pts \(A4\)/)
-  expect(info).to match(/Pages: +1\n/)
+  expect(doc.get_n_pages).to eq 1
+
+  page = doc.get_page 0
+  size = page.size
+
+  expect(size).to eq [595.0, 842.0] # A4 in points
 end
