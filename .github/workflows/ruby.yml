@@ -41,8 +41,8 @@ jobs:
           sudo apt-get install gir1.2-webkit2-4.1 --no-install-recommends
           # Provides xvfb-run used by the headless gem
           sudo apt-get install xvfb
-          # Provides pdfinfo
-          sudo apt-get install poppler-utils
+          # Provides Poppler bindings used to check PDF result
+          sudo apt-get install gir1.2-poppler-0.18
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
