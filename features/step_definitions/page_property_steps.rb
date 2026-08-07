@@ -1,22 +1,9 @@
 # frozen_string_literal: true
 
-require "pdf/reader"
-require "stringio"
-
 Then(/^the file "([^"]*)" should have default page properties$/) do |file|
-  pages = File.open expand_path(file) do |io|
-    reader = PDF::Reader.new(io)
-    reader.pages
-  end
+  full_path = expand_path(file)
+  info = `pdfinfo #{full_path}`
 
-  pages.each do |page|
-    box = page.attributes[:MediaBox]
-
-    aggregate_failures "A4 page size" do
-      expect(box[0]).to eq 0
-      expect(box[1]).to eq 0
-      expect(box[2]).to eq 595
-      expect(box[3]).to eq 842
-    end
-  end
+  expect(info).to match(/Page size: +595 x 842 pts \(A4\)/)
+  expect(info).to match(/Pages: +1\n/)
 end

@@ -26,6 +26,7 @@ jobs:
         run: |
           # Needed to avoid packages not being found sometimes
           sudo apt-get update
+
           # Provides libgirepository-1.0.so.1
           sudo apt-get install libgirepository-1.0-1
           # BUG: Missing dependency of gir1.2-harfbuzz-0.0
@@ -40,6 +41,8 @@ jobs:
           sudo apt-get install gir1.2-webkit2-4.1 --no-install-recommends
           # Provides xvfb-run used by the headless gem
           sudo apt-get install xvfb
+          # Provides pdfinfo
+          sudo apt-get install poppler-utils
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
