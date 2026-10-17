@@ -5,7 +5,7 @@ Feature: Command Line Errors
 
   Scenario: Forgetting the input file
     When I run `ghtml2pdf`
-    Then it should fail with exactly:
+    Then it should fail with:
       """
       An input filename is required
       """
